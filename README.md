@@ -50,7 +50,7 @@ npm start
   "category_id": "66d1112c90ab5678cdef1234"
 }
 ```
-- POST /api/products → Create a new product
+- GET /api/orders/:id - Get order details
 - PUT /api/products/:id → Update product details
 - GET /api/products/low-stock → Get products with stock < 10
 
@@ -89,14 +89,16 @@ npm start
 - Models: Product, Category, Order, OrderItem.
 - Used Mongoose transactions to ensure stock consistency (no overselling).
 - price_at_time stored in OrderItem → keeps historical prices even if product price changes later.
+- Stock is reduced at order creation and restored if the order is cancelled.
+- low stock alerts (in-stock, low-stock, out-of-stock)
 
 ### Frontend:
 - React app with Context API for Cart, CSS for styling.
 - Product catalog supports:
-  ✅ Stock levels (In Stock, Low Stock, Out of Stock)
-  ✅ Search by name
-  ✅ Filter by category
-  ✅ Add to cart
+  - ✅ Stock levels (In Stock, Low Stock, Out of Stock)
+  - ✅ Search by name
+  - ✅ Filter by category
+  - ✅ Add to cart
 - Cart (checkout → create order)
 - Orders (view history + statuses)
 
