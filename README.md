@@ -50,7 +50,7 @@ npm start
   "category_id": "66d1112c90ab5678cdef1234"
 }
 ```
-- GET /api/orders/:id - Get order details
+- GET /api/products - List all products
 - PUT /api/products/:id → Update product details
 - GET /api/products/low-stock → Get products with stock < 10
 
